@@ -1,0 +1,26 @@
+{
+  "name": "cinematrix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"node server/server.js\" \"cd client && npm run dev\"",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "apollo":"node server/server.js --ignore client",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntimatterNova/Cinematrix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntimatterNova/Cinematrix/issues"
+  },
+  "homepage": "https://github.com/AntimatterNova/Cinematrix#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
