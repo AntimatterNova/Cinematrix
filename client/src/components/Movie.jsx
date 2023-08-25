@@ -20,7 +20,7 @@ const Movie = ({ item }) => {
         }),
       });
     } else {
-      alert('Please log in to save a movie');
+      alert('Please log in to save a movie to Saved Movies');
     }
   };
 
