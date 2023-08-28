@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { UserAuth } from '';
+import { db } from '';
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
@@ -8,7 +10,7 @@ const Movie = ({ item }) => {
 
   const movieID = doc(db, 'users', `${user?.email}`);
 
-  const saveShow = async () => {
+  const saveMovie = async () => {
     if (user?.email) {
       setLike(!like);
       setSaved(true);
@@ -35,7 +37,7 @@ const Movie = ({ item }) => {
         <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
           {item?.title}
         </p>
-        <p onClick={saveShow}>
+        <p onClick={saveMovie}>
           {like ? (
             <FaHeart className='absolute top-4 left-4 text-gray-300' />
           ) : (
