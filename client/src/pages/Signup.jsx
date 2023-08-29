@@ -1,0 +1,1 @@
+// Make sure the entire structure is wrapped in 'className="canvas"' for the matrix background
