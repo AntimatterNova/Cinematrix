@@ -1,4 +1,6 @@
-
+import React, { useState, useEffect } from 'react';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const SavedMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -33,7 +35,7 @@ const SavedMovies = () => {
 
   return (
     <>
-      <h2 className='text-white font-semibold md:text-xl p-4'>My <Movies></Movies></h2>
+      <h2 className='text-white font-semibold md:text-xl p-4'>My Movies <Movies></Movies></h2>
       <div className='relative flex items-center group'>
         <MdChevronLeft
           onClick={slideLeft}

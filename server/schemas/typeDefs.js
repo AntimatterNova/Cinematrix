@@ -38,3 +38,5 @@ const typeDefs = `
     removeMovie(movieId: ID!): User
   }
 `;
+
+module.exports = typeDefs;

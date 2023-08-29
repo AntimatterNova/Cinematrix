@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { UserAuth } from '';
 
 const Navbar = () => {
   const { user, logOut } = UserAuth();
@@ -16,20 +17,20 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex items-center justify-between p-4 z-[100] w-full absolute'>
+    <div className='flex items-center  justify-between p-4 z-[100] w-full absolute'>
       <Link to='/'>
-        <h1 className='text-stone-600 text-6xl font-bold cursor-pointer'>
+        <h1 className='text-center md:text-center bg-black/75 text-green-600 text-6xl font-semibold cursor-pointer animate-fade'>
           Cinematrix
         </h1>
       </Link>
       {user?.email ? (
         <div>
           <Link to='/account'>
-            <button className='text-white pr-4'>Account</button>
+            <button className='text-green-600 pr-4'>Account</button>
           </Link>
           <button
             onClick={handleLogout}
-            className='bg-violet-600 px-6 py-2 rounded cursor-pointer text-white'
+            className='bg-green-600 px-6 py-2 rounded cursor-pointer text-white'
           >
             Logout
           </button>
@@ -37,10 +38,10 @@ const Navbar = () => {
       ) : (
         <div>
           <Link to='/login'>
-            <button className='text-white pr-4'>Sign In Here</button>
+            <button className='text-green-600 pr-4'>Sign In</button>
           </Link>
           <Link to='/signup'>
-            <button className='bg-violet-600 px-6 py-2 rounded cursor-pointer text-white'>
+            <button className='bg-green-600 px-6 py-2 rounded cursor-pointer text-white'>
               Sign Up
             </button>
           </Link>
@@ -51,3 +52,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
