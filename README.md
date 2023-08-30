@@ -1,6 +1,5 @@
 # Cinematrix
 
-
 ## Description
 
 Introducing Cinematrix, your ultimate destination for a personalized movie experience. With Cinematrix, discovering your next favorite film has never been easier. Our cutting-edge app employs advanced algorithms to seamlessly analyze your unique preferences, ensuring that every movie suggestion aligns perfectly with your taste. Whether you're a fan of heart-pounding action, heartwarming romance, mind-bending sci-fi, or captivating drama, Cinematrix has you covered.
@@ -15,7 +14,7 @@ Not only can you explore an extensive library of films, but you can also leave y
 
 ## Installation
 
-
+Open your terminal and use npm i to download all the required dependencies.
 
 ## Usage
 
@@ -31,4 +30,4 @@ This project is licensed under the MIT license. Click [here](https://opensource.
 
 ## Questions
 
-If you have any questions, please contact me at . You can also check out my [GitHub profile](https://github.com/).
+ You can also check out any of our [GitHub profiles](https://github.com/JordanEngland)(https://github.com/Celyph)(https://github.com/LilaJe)(https://github.com/Wes217)(https://github.com/AntimatterNova) .
