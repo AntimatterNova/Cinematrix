@@ -6,6 +6,8 @@ Introducing Cinematrix, your ultimate destination for a personalized movie exper
 
 Not only can you explore an extensive library of films, but you can also leave your mark by providing ratings and reviews, helping fellow movie enthusiasts make informed choices. Our recommendation system goes beyond the surface, diving deep into your viewing history to unearth hidden gems you might have missed. Cinematrix isn't just a movie app; it's your personal cinema companion, revolutionizing the way you discover, enjoy, and engage with the cinematic world. Elevate your movie nights with Cinematrix and embark on a journey of cinematic exploration like never before.
 
+<img src='client\src\assets\Cinematrix.png'>
+
 ## Table of Contents
 
 - [Usage](#usage)
@@ -30,4 +32,14 @@ This project is licensed under the MIT license. Click [here](https://opensource.
 
 ## Questions
 
- You can also check out any of our [GitHub profiles](https://github.com/JordanEngland)(https://github.com/Celyph)(https://github.com/LilaJe)(https://github.com/Wes217)(https://github.com/AntimatterNova) .
+ You can also check out any of our [GitHub profiles]
+ 
+ (https://github.com/AntimatterNova)
+
+ (https://github.com/JordanEngland)
+
+ (https://github.com/Celyph)
+
+ (https://github.com/Wes217)
+
+ (https://github.com/LilaJe)
