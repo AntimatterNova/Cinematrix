@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,6 +9,11 @@ import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Main from './components/Main';
+import Movie from './components/Movie';
+import Row from './components/Row';
+import MovList from './components/SavedMovies';
 
 const link = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -34,9 +39,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="">
+      <div>
         <Navbar />
-        <div className="">
+        <div>
           <Outlet />
         </div>
       </div>
