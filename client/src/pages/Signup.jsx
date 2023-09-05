@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-
 import Auth from '../utils/auth';
 
 const Signup = () => {
@@ -30,7 +30,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className='w-full h-screen'>
+      <div className='w-full h-screen log-bg'>
         <img
           className='hidden sm:block absolute w-full h-full object-cover'
           src='https://cdn.pixabay.com/photo/2020/07/02/04/31/matrix-5361690_1280.png'

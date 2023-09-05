@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserAuth } from '';
+import Auth from '../utils/auth';
 
 const Navbar = () => {
-  const { user, logOut } = UserAuth();
+  // const { user, logOut } = UserAuth();
   const navigate = useNavigate();
   // console.log(user.email)
 
   const handleLogout = async () => {
     try {
-      await logOut();
+      await Auth.logOut();
       navigate('/');
     } catch (error) {
       console.log(error);
@@ -23,7 +23,7 @@ const Navbar = () => {
           Cinematrix
         </h1>
       </Link>
-      {user?.email ? (
+      {Auth.loggedIn() ? (
         <div>
           <Link to='/account'>
             <button className='text-green-600 pr-4'>Account</button>

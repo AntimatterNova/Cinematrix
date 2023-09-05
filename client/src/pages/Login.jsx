@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -30,48 +31,8 @@ const Login = () => {
     }
   };
 
-  // Initialising the canvas
-var canvas = document.querySelector('canvas'),
-ctx = canvas.getContext('2d');
-
-// Setting the width and height of the canvas
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-// Setting up the letters
-var letters = '大子今力下九入不123456789¶§πΣΦΩδÆ£¥µABCDEFGHIJKLMNOPQRSTUVWXYZ大子今力下九入不123456789¶§πΣΦΩδÆ£¥µ';
-letters = letters.split('');
-
-// Setting up the columns
-var fontSize = 10,
-columns = canvas.width / fontSize;
-
-// Setting up the drops
-var drops = [];
-for (var i = 0; i < columns; i++) {
-drops[i] = 1;
-}
-
-// Setting up the draw function
-function draw() {
-ctx.fillStyle = 'rgba(0, 0, 0, .1)';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-for (var i = 0; i < drops.length; i++) {
-var text = letters[Math.floor(Math.random() * letters.length)];
-ctx.fillStyle = '#0f0';
-ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-drops[i]++;
-if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
-  drops[i] = 0;
-}
-}
-}
-
-// Loop the animation
-setInterval(draw, 43);
-
   return (
-    <div className='w-full h-screen'>
+    <div className='w-full h-screen log-bg'>
       <img
         className='hidden sm:block absolute w-full h-full object-cover'
         src='https://cdn.pixabay.com/photo/2020/07/02/04/31/matrix-5361690_1280.png'

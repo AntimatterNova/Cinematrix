@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import { UserAuth } from '';
-import { db } from '';
+// import { UserAuth } from '';
+// import { db } from '';
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);

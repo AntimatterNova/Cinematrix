@@ -10,3 +10,7 @@ body {
 }
 
 canvas {display: block;}
+
+.log-bg {
+  background-image: url(./assets/matrix-5361690_1280.webp);
+}
