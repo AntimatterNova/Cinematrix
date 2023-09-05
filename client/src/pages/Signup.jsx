@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import { UserAuth } from '';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 const Signup = () => {
+  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { user, signUp } = UserAuth();
+  const [addUser, { error, data }] = useMutation(ADD_USER);
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signUp(email, password);
-      navigate('/')
+      const {data} = await addUser({
+        variables: {
+          username:username,
+          email:email,
+          password:password
+        }
+      })
+
+      Auth.login(data.addUser.token)
     } catch (error) {
       console.log(error);
     }
@@ -20,7 +30,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className='w-full h-screen'>
+      <div className='w-full h-screen log-bg'>
         <img
           className='hidden sm:block absolute w-full h-full object-cover'
           src='https://cdn.pixabay.com/photo/2020/07/02/04/31/matrix-5361690_1280.png'
@@ -35,6 +45,13 @@ const Signup = () => {
                 onSubmit={handleSubmit}
                 className='w-full flex flex-col py-4'
               >
+                <input
+                onChange={(e) => setUsername(e.target.value)}
+                className='p-3 my-2 bg-black text-green-600 rounded'
+                type='username'
+                placeholder='Username'
+                autoComplete='username'
+                />
                 <input
                   onChange={(e) => setEmail(e.target.value)}
                   className='p-3 my-2 bg-black text-green-600 rounded'

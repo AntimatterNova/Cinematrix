@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import { UserAuth } from '';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('')
-  const { user, logIn } = UserAuth();
+  const [showAlert, setShowAlert] = useState(false);
+  const [login, { err }] = useMutation(LOGIN_USER);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('')
     try {
-      await logIn(email, password)
-      navigate('/')
+      const {data} = await login({
+        variables: {
+          email:email,
+          password:password
+        }
+      });
+
+      Auth.login(data.login.token);
+      
     } catch (error) {
       console.log(error);
       setError(error.message)
@@ -22,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className='w-full h-screen'>
+    <div className='w-full h-screen log-bg'>
       <img
         className='hidden sm:block absolute w-full h-full object-cover'
         src='https://cdn.pixabay.com/photo/2020/07/02/04/31/matrix-5361690_1280.png'
