@@ -22,7 +22,9 @@ Open your terminal and use "npm install" to download all the required dependenci
 ## Usage
 
 Follow the URl link and create an account and start finding movies!!
-Deployment Link:
+
+Deployment Link: 
+
 Repo Link: https://github.com/AntimatterNova/Cinematrix
 
 ## License
@@ -44,4 +46,3 @@ This project is licensed under the MIT license. Click [here](https://opensource.
 
  (https://github.com/Wes217)
 
- (https://github.com/LilaJe)
