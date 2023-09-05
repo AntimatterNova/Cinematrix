@@ -23,7 +23,7 @@ Open your terminal and use "npm install" to download all the required dependenci
 
 Follow the URl link and create an account and start finding movies!!
 
-Deployment Link: 
+Deployment Link: https://cinematrix-p3-4d67a1eb21ce.herokuapp.com/
 
 Repo Link: https://github.com/AntimatterNova/Cinematrix
 
