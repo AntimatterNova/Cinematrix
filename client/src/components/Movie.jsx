@@ -1,30 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-// import { UserAuth } from '';
-// import { db } from '';
+import Auth from '../utils/auth';
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
   const [saved, setSaved] = useState(false);
-  const { user } = UserAuth();
+  const { user } = Auth;
 
-  const movieID = doc(db, 'users', `${user?.email}`);
-
-  const saveMovie = async () => {
+  const saveMovie = () => {
     if (user?.email) {
-      setLike(!like);
-      setSaved(true);
-      await updateDoc(movieID, {
-        savedShows: arrayUnion({
-          id: item.id,
-          title: item.title,
-          img: item.backdrop_path,
-        }),
-      });
+      // Generate a unique key for the saved movie based on its ID
+      const movieKey = `movie_${item.id}`;
+
+      // Check if the movie is already saved
+      if (localStorage.getItem(movieKey)) {
+        // If it's already saved, remove it
+        localStorage.removeItem(movieKey);
+        setLike(false);
+        setSaved(false);
+      } else {
+        // If it's not saved, save it
+        localStorage.setItem(movieKey, JSON.stringify(item));
+        setLike(true);
+        setSaved(true);
+      }
     } else {
       alert('Please log in to save a movie to Saved Movies');
     }
   };
+
+  // Check if the movie is already saved when the component mounts
+  const movieKey = `movie_${item.id}`;
+  useEffect(() => {
+    if (localStorage.getItem(movieKey)) {
+      setLike(true);
+      setSaved(true);
+    }
+  }, [movieKey]);
 
   return (
     <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'>

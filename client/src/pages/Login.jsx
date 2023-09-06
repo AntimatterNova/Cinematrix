@@ -70,7 +70,7 @@ const Login = () => {
               </div>
               <p className='py-8'>
                 <span className='text-green-600'>New to Cinematrix?</span>{' '}
-                <Link to='/signup'className='text-white'>Sign Up</Link>
+                <Link to='/sign-up'className='text-white'>Sign Up</Link>
               </p>
             </form>
           </div>

@@ -80,7 +80,7 @@ const Signup = () => {
                   <span className='text-green-600'>
                     Already subscribed to Cinematrix?
                   </span>{' '}
-                  <Link to='/login'>Sign In</Link>
+                  <Link to='/sign-in'>Sign In</Link>
                 </p>
               </form>
             </div>

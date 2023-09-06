@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div className='flex items-center  justify-between p-4 z-[100] w-full absolute'>
       <Link to='/'>
-        <h1 className='text-center md:text-center bg-black/75 text-green-600 text-6xl font-semibold cursor-pointer animate-fade'>
+        <h1 className='text-center md:text-center p-1 bg-black bg-opacity-50 rounded-xl text-green-600 text-6xl font-semibold cursor-pointer animate-fade'>
           Cinematrix
         </h1>
       </Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
           </button>
         </div>
       ) : (
-        <div>
+        <div className='bg-black bg-opacity-50 rounded p-2'>
           <Link to='/login'>
             <button className='text-green-600 pr-4'>Sign In</button>
           </Link>

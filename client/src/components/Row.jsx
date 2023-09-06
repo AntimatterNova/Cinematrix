@@ -7,8 +7,18 @@ const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch(fetchURL).then((response) => {
-      setMovies(response.data.results);
+    fetch(fetchURL)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json(); // Parse the response as JSON
+    })
+    .then((data) => {
+      setMovies(data.results);
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
     });
   }, [fetchURL]);
 
@@ -23,7 +33,7 @@ const Row = ({ title, fetchURL, rowID }) => {
 
   return (
     <>
-      <h2 className='text-white font-bold md:text-xl p-4'>{title}</h2>
+      <h2 className='text-white font-bold md:text-xl p-4 bg-green-600 rounded-lg'>{title}</h2>
       <div className='relative flex items-center group'>
         <MdChevronLeft
           onClick={slideLeft}
@@ -32,7 +42,7 @@ const Row = ({ title, fetchURL, rowID }) => {
         />
         <div
           id={'slider' + rowID}
-          className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'
+          className='w-full h-full relative'
         >
           {movies.map((item, id) => (
             <Movie key={id} item={item} />
